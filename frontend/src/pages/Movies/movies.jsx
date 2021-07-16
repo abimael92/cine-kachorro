@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import _ from "lodash";
-
 import { search, categorize, filterRating } from "../../utils";
 import { MoviesTable, Pagination } from "../../components";
 import { Input, Loading, ListGroup } from "../../components/common";
-
 import { getMovies } from "../../actions/moviesAction";
 import { getGenres } from "../../actions/genreAction";
+import _ from "lodash";
 
 class Movies extends Component {
   state = {
@@ -42,6 +40,7 @@ class Movies extends Component {
     } = this.state;
 
     const { movies, genres } = this.props;
+    console.log(movies);
 
     if (_.isEmpty(movies)) {
       return (

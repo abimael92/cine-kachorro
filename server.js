@@ -4,8 +4,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const databaseConfig = require("./database/config/keys");
 const bodyParser = require("body-parser");
-// const movieRoute = require("./routes/movies");
-// const genreRoute = require("./routes/genres");
+const movieRoute = require("./routes/movies");
+const genreRoute = require("./routes/genres");
 const userRoute = require("./routes/users");
 
 
@@ -44,8 +44,8 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "10mb" }));
 app.use(bodyParser.json({ limit: "10mb" }));
 
 //App routes to handle requests
-// app.use("/api/movies", movieRoute);
-// app.use("/api/genres", genreRoute); //cache
+app.use("/api/movies", movieRoute);
+app.use("/api/genres", genreRoute); //cache
 app.use("/api/users", userRoute);
 
 //Serve our static asset

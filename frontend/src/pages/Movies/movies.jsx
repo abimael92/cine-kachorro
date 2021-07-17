@@ -40,7 +40,6 @@ class Movies extends Component {
     } = this.state;
 
     const { movies, genres } = this.props;
-    console.log(movies);
 
     if (_.isEmpty(movies)) {
       return (
@@ -99,6 +98,7 @@ class Movies extends Component {
               </p>
 
               {!!filteredMovies ? (
+                
                 <MoviesTable
                   pageSize={pageSize}
                   currentPage={currentPage}

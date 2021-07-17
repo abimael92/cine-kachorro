@@ -27,9 +27,9 @@ function Navbar(props) {
   }
 
   return (
-    <nav className="nav-wrapper">
-      <div id="burger" class="ico-btn" onClick={toggleNav}>
-        <span class="ico-btn__burger"></span>
+    <nav className="nav-wrapper">Kachorro
+      <div id="burger" className="ico-btn" onClick={toggleNav}>
+        <span className="ico-btn__burger"></span>
       </div>
 
       {/* <Link className="nav-brand" to="/">iCinema</Link> */}

@@ -18,11 +18,12 @@ class App extends Component {
           <div className="App">
             <Navbar />
             <Switch>
-              <Redirect exact from="/" to="/movies" />
+            <Route exact path="/movies/new" component={AddMovieForm} />
               <Route exact path="/login" component={Login} />
               <Route path="/resigter" component={Register} />
               <Route path="/movies" exact component={Movies} />
-              <Route exact path="/movies/new" component={AddMovieForm} />
+              
+              <Redirect exact from="/" to="/movies" />
             </Switch>
             <Footer />
           </div>

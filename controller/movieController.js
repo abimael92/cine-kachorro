@@ -4,6 +4,7 @@ const multer = require("multer");
 const fs = require("fs");
 
 exports.getAllMovies = (req, res) => {
+  // console.log("res: ", res);
   Movie.find()
     .then((movies) =>
       res.status(200).json({

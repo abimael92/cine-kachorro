@@ -16,8 +16,13 @@ export default function ({ movie }) {
     movieLength,
   } = movie;
 
-  const encodedImage = new Buffer(image.data, "binary").toString("base64");
-  const coverImage = "data:image/jpeg;base64," + encodedImage;
+  console.log("**************************************************");
+  console.log("image: ", title);
+  console.log("**************************************************");
+
+  const encodedImage = new Buffer(image.binary.base64, "binary").toString("base64");
+  const coverImage = "data:image/jpeg;base64" + encodedImage;
+  // data:image/png;base64
 
   function flipCard(cardID) {
     const card = document.getElementById(`${cardID}`);

@@ -32,12 +32,12 @@
     "nodemailer": "^6.3.1",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
-    "redis": "^2.8.0",
+    "redis": "^3.1.2",
     "validator": "^9.4.1",
     "webpack-sources": "^1.4.3"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
+    "nodemon": "^2.0.12"
   },
   "engines": {
     "node": "10.14.2"

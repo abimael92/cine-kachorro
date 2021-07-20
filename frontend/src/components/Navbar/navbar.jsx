@@ -32,7 +32,7 @@ function Navbar(props) {
         <span className="ico-btn__burger"></span>
       </div>
 
-      {/* <Link className="nav-brand" to="/">iCinema</Link> */}
+      <Link className="nav-brand" to="/">Kachorro</Link>
 
       <div id="slider" className="slider">
         <ul className="list">

@@ -16,11 +16,12 @@ export default function ({ movie }) {
     movieLength,
   } = movie;
 
-  console.log("**************************************************");
-  console.log("image: ", title);
-  console.log("**************************************************");
+  // console.log("**************************************************");
+  // console.log("image: ", title);
+  // console.log("code: ", image.binary);
+  // console.log("**************************************************");
 
-  const encodedImage = new Buffer(image.binary.base64, "binary").toString("base64");
+  const encodedImage = new Buffer.from(image.binary.base64, "binary").toString("base64");
   const coverImage = "data:image/jpeg;base64" + encodedImage;
   // data:image/png;base64
 

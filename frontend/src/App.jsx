@@ -22,7 +22,6 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route path="/resigter" component={Register} />
               <Route path="/movies" exact component={Movies} />
-              
               <Redirect exact from="/" to="/movies" />
             </Switch>
             <Footer />

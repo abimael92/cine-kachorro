@@ -1,4 +1,3 @@
-import { getLogger } from "nodemailer/lib/shared";
 import React from "react";
 
 import MovieCard from "./MovieCard";

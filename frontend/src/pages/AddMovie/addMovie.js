@@ -5,7 +5,9 @@ import { connect } from "react-redux";
 import Input from "../../components/common/Input";
 import Select from "../../components/common/Select";
 import { addMovie } from "../../actions/moviesAction";
+import { getGenres } from "../../actions/genreAction";
 import { movieSchema } from "./schema";
+
 
 class AddMovieForm extends React.Component {
   state = {
@@ -16,7 +18,7 @@ class AddMovieForm extends React.Component {
       description: "",
       image: null,
     },
-    genres: [],
+    genres: this.props.getGenres(),
     errors: {},
   };
 
@@ -67,6 +69,7 @@ class AddMovieForm extends React.Component {
             <Select
               name="genre"
               label="Genre"
+              placeholder="Select a genre..."
               onChange={this.handleChange}
               value={genre}
               error={errors["genre"]}
@@ -109,9 +112,10 @@ class AddMovieForm extends React.Component {
     );
   }
 }
-const mapDispatchToProps = (dipatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    addMovie: (movie) => dipatch(addMovie(movie)),
+    addMovie: (movie) => dispatch(addMovie(movie)),
+    getGenres: () => dispatch(getGenres()),
   };
 };
 

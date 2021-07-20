@@ -3,8 +3,10 @@ import { connect } from "react-redux";
 import { search, categorize, filterRating } from "../../utils";
 import { MoviesTable, Pagination } from "../../components";
 import { Input, Loading, ListGroup } from "../../components/common";
-import { getMovies } from "../../actions/moviesAction";
+import { addMovie, getMovies } from "../../actions/moviesAction";
+import { Link } from "react-router-dom";
 import { getGenres } from "../../actions/genreAction";
+// import { signIn } from "../../actions/authAction";
 import _ from "lodash";
 
 class Movies extends Component {
@@ -38,6 +40,8 @@ class Movies extends Component {
       pageSize,
       rating,
     } = this.state;
+    const { loggedIn } = this.props;
+    // if (loggedIn) this.props.history.push("/");
 
     const { movies, genres } = this.props;
 
@@ -79,11 +83,12 @@ class Movies extends Component {
                 type="number"
                 iconClass="fas fa-star"
               />
-              {/* { loggedIn && <Link to='/movies/new' className='btn btn-primary btn-block my-2 text-white'> Add Movie </Link> } */}
+              { loggedIn && <Link to='/movies/new' className='btn btn-primary btn-block my-2 text-white'> Add Movie </Link> }
               {/* <Rating total={5} filled={rating} onChange={val => this.handleChange('rating', val)}/> */}
             </div>
 
             <div className="col-lg-10 col-sm-12">
+              
               <Input
                 onChange={(event) =>
                   this.handleChange("searchFilter", event.target.value)
